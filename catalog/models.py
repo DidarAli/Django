@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-
+from django.urls import reverse
 class Kafedra(models.Model):
     """
     Model representing an author.
@@ -26,7 +26,7 @@ class Kafedra(models.Model):
         return '%s, %s' % (self.name, self.institut_name)
 		
 
-class Predmety(models.Model):
+class Predmet(models.Model):
     """
     Model representing an author.
     """
@@ -38,7 +38,7 @@ class Predmety(models.Model):
         """
         Returns the url to access a particular author instance.
         """
-        return reverse('predmety-detail', args=[str(self.id)])
+        return reverse('predmet-detail', args=[str(self.id)])
     
 
     def __str__(self):

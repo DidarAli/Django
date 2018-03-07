@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>kafedra List</h1>
+
+    {% if kafedra_list %}
+    <ul>
+
+      {% for kafedra in kafedra_list %}
+      <li>
+        <a href="{{kafedra.get_absolute_url}}">{{ kafedra.name}}  </a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no kafedras</p>
+    {% endif %}       
+{% endblock %}

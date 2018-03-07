@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Predmet List</h1>
+
+    {% if predmet_list %}
+    <ul>
+
+      {% for predmet in predmet_list %}
+      <li>
+        <a href="{{predmet.get_absolute_url}}">{{ predmet.name}} </a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no predmets</p>
+    {% endif %}       
+{% endblock %}
